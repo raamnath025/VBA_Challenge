@@ -21,6 +21,7 @@ Sub StockData()
         Dim LastRow As Double
           For Each WS In ActiveWorkbook.Worksheets
                   WS.Activate
+           WS.Range("A1:G1").EntireColumn.AutoFit
            LastRow = Cells(Rows.Count, 1).End(xlUp).Row
            outputRow = FIRST_DATA_ROW
         Cells(1, "I").Value = "Ticker"
@@ -89,6 +90,8 @@ Sub StockData()
                 Cells(4, Column + 16).Value = Cells(GR, Column + 11).Value
             End If
         Next GR
+    WS.Range("I1:L1").EntireColumn.AutoFit
+    WS.Range("O1:Q1").EntireColumn.AutoFit
     Next WS
-
+    
 End Sub
