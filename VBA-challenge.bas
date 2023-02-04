@@ -74,21 +74,21 @@ Sub StockData()
         Cells(1, Column + 15).Value = "Ticker"
         Cells(1, Column + 16).Value = "Value"
         'Look through each rows to find the greatest value and its associate ticker
-        Dim Z As Integer
-        For Z = 2 To RGLastRow
-            If Cells(Z, Column + 10).Value = Application.WorksheetFunction.Max(WS.Range("K2:K" & RGLastRow)) Then
-                Cells(2, Column + 15).Value = Cells(Z, Column + 8).Value
-                Cells(2, Column + 16).Value = Cells(Z, Column + 10).Value
+        Dim GR As Integer
+        For GR = 2 To RGLastRow
+            If Cells(GR, Column + 10).Value = Application.WorksheetFunction.Max(WS.Range("K2:K" & RGLastRow)) Then
+                Cells(2, Column + 15).Value = Cells(GR, Column + 8).Value
+                Cells(2, Column + 16).Value = Cells(GR, Column + 10).Value
                 Cells(2, Column + 16).NumberFormat = "0.00%"
-            ElseIf Cells(Z, Column + 10).Value = Application.WorksheetFunction.Min(WS.Range("K2:K" & RGLastRow)) Then
-                Cells(3, Column + 15).Value = Cells(Z, Column + 8).Value
-                Cells(3, Column + 16).Value = Cells(Z, Column + 10).Value
+            ElseIf Cells(GR, Column + 10).Value = Application.WorksheetFunction.Min(WS.Range("K2:K" & RGLastRow)) Then
+                Cells(3, Column + 15).Value = Cells(GR, Column + 8).Value
+                Cells(3, Column + 16).Value = Cells(GR, Column + 10).Value
                 Cells(3, Column + 16).NumberFormat = "0.00%"
-            ElseIf Cells(Z, Column + 11).Value = Application.WorksheetFunction.Max(WS.Range("L2:L" & RGLastRow)) Then
-                Cells(4, Column + 15).Value = Cells(Z, Column + 8).Value
-                Cells(4, Column + 16).Value = Cells(Z, Column + 11).Value
+            ElseIf Cells(GR, Column + 11).Value = Application.WorksheetFunction.Max(WS.Range("L2:L" & RGLastRow)) Then
+                Cells(4, Column + 15).Value = Cells(GR, Column + 8).Value
+                Cells(4, Column + 16).Value = Cells(GR, Column + 11).Value
             End If
-        Next Z
+        Next GR
     Next WS
 
 End Sub
